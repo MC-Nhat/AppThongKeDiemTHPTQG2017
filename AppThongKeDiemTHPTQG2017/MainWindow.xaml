@@ -1,0 +1,27 @@
+﻿<Window x:Class="AppThongKeDiemTHPTQG2017.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppThongKeDiemTHPTQG2017"
+        mc:Ignorable="d"
+        Title="Tool thống kê điểm tốt nghiệp" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <ListView x:Name="ListViewScore" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="84,157,84,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Province code" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Province" DisplayMemberBinding="{Binding Key}" />
+                    <GridViewColumn Header="AverageMath" DisplayMemberBinding="{Binding Value}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Content="Tính Điểm Trung Bình Thi THPTQG 2017" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="txtBrowse" HorizontalAlignment="Left" Height="28" Margin="84,77,0,0" TextWrapping="NoWrap" AcceptsReturn="False" VerticalAlignment="Top" Width="521" FontSize="16" IsEnabled="False"/>
+        <TextBox x:Name="txtSearchProvince" HorizontalAlignment="Left" Height="28" Margin="363,119,0,0" TextWrapping="NoWrap" AcceptsReturn="False" VerticalAlignment="Top" Width="242" FontSize="16" IsEnabled="False"/>
+
+        <Button x:Name="btnBrowse" Content="Browse" HorizontalAlignment="Left" Height="28" Margin="643,77,0,0" VerticalAlignment="Top" Width="73" Click="btnBrowse_Click"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="28" Margin="643,119,0,0" VerticalAlignment="Top" Width="73" Click="btnBrowse_Search"/>
+    </Grid>
+</Window>
